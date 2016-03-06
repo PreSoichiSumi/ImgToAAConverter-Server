@@ -18,7 +18,11 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'com.sparkjava:spark-core:2.2'
-    compile 'com.twilio.sdk:twilio-java-sdk:4.4.5'
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.sparkjava:spark-core:2.2'  //spark
+    compile 'com.twilio.sdk:twilio-java-sdk:4.4.5'  //spark
+    compile 'com.google.code.gson:gson:2.2.4'   //json conversion
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
