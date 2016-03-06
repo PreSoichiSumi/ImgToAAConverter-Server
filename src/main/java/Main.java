@@ -17,7 +17,8 @@ public class Main {
             map.put("You're","guest");
             return new Gson().toJson(map);
         });
-        get("/getParam",(req,res)->{return req.queryParams("sumi")+ " "+req.queryParams("one");});//queryParamが与えられていない時はnullがかえってくる　
+        get("/getParam",(req,res)->{return req.queryParams("sumi")+ " "+req.queryParams("one");});//queryParam is not found ->null
+        get("/slashUrl/:name/:age",(req,res)->{return req.params(":name")+" "+req.params(":age");}); //when you use slash termination, use req,params.
 
     }
 }
